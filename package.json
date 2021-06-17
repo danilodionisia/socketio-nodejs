@@ -1,0 +1,29 @@
+{
+  "name": "socketio-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danilodionisia/socketio-nodejs.git"
+  },
+  "author": "danilo dionisia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danilodionisia/socketio-nodejs/issues"
+  },
+  "homepage": "https://github.com/danilodionisia/socketio-nodejs#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.14",
+    "socket.io": "^4.1.2"
+  }
+}
