@@ -15,7 +15,7 @@ class Socket {
         this.server = http.createServer(this.app);
         this.io = socketio(this.server, {cors: {origin: '*'}});
         this.server.listen(this.port, () => {
-            console.log(`Running on port: ${this.port}`);
+            console.log(`Socket server running on port: ${this.port}`);
         });        
     }
 
@@ -26,6 +26,8 @@ class Socket {
              socket.on('username', username => {
 
                 this.users[username] = socket.id;
+                console.log(this.users);
+                socket.emit('users', this.users);
 
                 this.sendPrivate = (user, msg) => {
                     if(user){

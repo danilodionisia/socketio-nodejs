@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Running on port ${port}`);
+    console.log(`API server running on port ${port}`);
 });
 
 module.exports = {
