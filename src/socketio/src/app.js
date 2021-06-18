@@ -3,7 +3,16 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 3000;
+const {Socket} = require('./socket');
+const socketPort = process.env.SOCKET_PORT || 3080;
+const socket = new Socket(app, socketPort); 
 
+const sendSocket = (req, res, next) => {
+    req.mySocket = socket;
+    return next();
+};
+
+app.use(sendSocket);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.set('view engine', 'ejs');
