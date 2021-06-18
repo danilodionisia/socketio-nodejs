@@ -3,13 +3,12 @@ exports.socketControllerPublic = async (req, res) => {
     const socket = req.mySocket;
 
     try{
-        const generalMsg = 'Essa é uma mensagem enviada para todos!';
-        socket.socketSendPublicMessage(generalMsg);
+        socket.socketSendPublicMessage(req.body.message);
+        res.status(200).json({msg: 'A public message was sent succesfully'});
     }catch(err){
         console.log(err);
-    }     
-    
-    res.send('public message');
+        return res.status(500).json({error: err});
+    }
 }
 
 exports.socketControllerPrivate = async (req, res) => {
@@ -17,14 +16,12 @@ exports.socketControllerPrivate = async (req, res) => {
     const socket = req.mySocket;
     
     try{
-        const privateMsg = 'Essa é uma mensagem privada!';
-        socket.socketSendPrivateMessage(req.body.user, privateMsg);
+        socket.socketSendPrivateMessage(req.body.user, req.body.message);
+        res.status(200).json({msg: 'A private message was sent succesfully'});
     }catch(err){
         console.log(err);
-    } 
-    
-    
-    res.send('private message');
+        return res.status(500).json({error: err});
+    }    
 }
 
 
