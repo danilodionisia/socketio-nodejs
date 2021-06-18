@@ -3,7 +3,7 @@ const {app} = require('./app');
 const socketController = require('./modules/capsules/controller/socketController');
 
 const {Socket} = require('./socket');
-const socketPort = 3080;
+const socketPort = process.env.SOCKET_PORT || 3080;
 const socket = new Socket(app, socketPort); 
 
 const sendSocket = (req, res, next) => {
