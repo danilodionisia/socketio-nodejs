@@ -15,7 +15,7 @@ const routes = require('./routes');
 app.use('/', routes);
 
 app.get('/', (req, res) => {
-    res.render('home');
+    res.render('../src/socketio/src/views/home');
 });
 
 app.listen(port, () => {

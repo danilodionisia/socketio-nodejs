@@ -8,6 +8,7 @@
   },
   "scripts": {
     "start": "node src/socketio/src/app.js",
+    "dev": "nodemon src/socketio/src/app.js",
     "test": "npm test"
   },
   "repository": {
