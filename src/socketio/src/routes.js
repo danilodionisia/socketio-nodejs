@@ -13,11 +13,11 @@ const sendSocket = (req, res, next) => {
 
 router.use(sendSocket);
 
-router.get('/public', (req, res) => {
+router.post('/public', (req, res) => {
     socketController.socketControllerPublic(req, res);   
 });
 
-router.get('/private', (req, res) => {
+router.post('/private', (req, res) => {
     socketController.socketControllerPrivate(req, res);   
 });
 
